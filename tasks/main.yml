@@ -1,0 +1,18 @@
+---
+
+- include: package.yml
+  tags: package
+
+- name: configure ntp file
+  template:
+    src: ntp.j2
+    dest: /etc/ntp.conf
+  notify: restart_ntp
+  tags: configuration
+
+- name: start/stop NTP service
+  service:
+    name: ntp
+    state: '{{ ntp_service_state }}'
+    enabled: '{{ ntp_service_enabled }}'
+  tags: service
