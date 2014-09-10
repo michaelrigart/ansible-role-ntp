@@ -41,7 +41,7 @@ Example Playbook
 
     - hosts: servers
       roles:
-         - { role: michaelrigart.ntp }
+         - { role: MichaelRigart.ntp }
 
 License
 -------
