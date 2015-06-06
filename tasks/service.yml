@@ -1,15 +1,15 @@
 ---
 
-- name: Debian | enable service
+- name: Debian | enable service on debian-type distros
   service:
-    name: ntp
+    name: '{{ ntp_daemon }}'
     state: '{{ ntp_service_state }}'
     enabled: '{{ ntp_service_enabled }}'
   when: ansible_os_family == 'Debian'
 
-- name: RedHat | enable service
+- name: RedHat | enable service on rhel-type distros
   service:
-    name: ntpd
+    name: '{{ ntp_daemon }}'
     state: '{{ ntp_service_state }}'
     enabled: '{{ ntp_service_enabled }}'
   when: ansible_os_family == 'RedHat'

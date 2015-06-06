@@ -2,5 +2,5 @@
 
 - name: restart_ntp
   service:
-    name: ntp
+    name: '{{ ntp_daemon }}'
     state: restarted
