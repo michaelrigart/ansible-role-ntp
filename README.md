@@ -6,6 +6,7 @@ An ansible role for installing and configuring NTP.
 
 For more information on NTP, [visit the NTP website](http://www.ntp.org)
 
+
 Role Variables
 --------------
 
