@@ -1,6 +1,5 @@
 Ansible NTP Role
 ================
-[![Build Status](https://semaphoreci.com/api/v1/projects/f88d8675-d744-492e-911d-0ff92d987107/461763/badge.svg)](https://semaphoreci.com/michaelrigart/ansible-role-ntp)
 
 An ansible role for installing and configuring NTP.
 
@@ -42,7 +41,7 @@ Example Playbook
 ```yaml
 - hosts: servers
   roles:
-     - { role: MichaelRigart.ntp, sudo: Yes }
+     - { role: MichaelRigart.ntp, become: true }
 ```
 
 License
