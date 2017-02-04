@@ -6,7 +6,11 @@ statsdir {{ ntp_statsdir }}
 {% endif %}
 
 {% for server in ntp_servers %}
-server {{ server }}
+pool {{ server }}
+{% endfor %}
+
+{% for pool in ntp_pools %}
+pool {{ pool }}
 {% endfor %}
 
 {% for restrict in ntp_restrict %}

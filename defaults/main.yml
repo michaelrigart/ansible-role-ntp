@@ -3,14 +3,18 @@ ntp_pkg_state: installed
 ntp_service_state: started
 ntp_service_enabled: yes
 ntp_driftfile: /var/lib/ntp/ntp.drift
-ntp_servers:
-  - 0.ubuntu.pool.ntp.org
-  - 1.ubuntu.pool.ntp.org
+ntp_servers: []
+ntp_pools:
+  - '0.ubuntu.pool.ntp.org iburst'
+  - '1.ubuntu.pool.ntp.org iburst'
+  - '2.ubuntu.pool.ntp.org iburst'
+  - '3.ubuntu.pool.ntp.org iburst'
 ntp_restrict:
-  - 'restrict -4 default kod notrap nomodify nopeer noquery'
-  - 'restrict -6 default kod notrap nomodify nopeer noquery'
+  - 'restrict -4 default kod notrap nomodify nopeer noquery limited'
+  - 'restrict -6 default kod notrap nomodify nopeer noquery limited'
   - 'restrict 127.0.0.1'
   - 'restrict ::1'
+  - 'restrict source notrap nomodify noquery'
 ntp_crypto:
 ntp_includefile:
 ntp_keys:
